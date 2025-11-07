@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telehealth Online - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in-section.appear { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-purple-100 via-violet-200 to-indigo-100 min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 bg-white bg-opacity-70 shadow-lg">
+    <div class="text-2xl font-bold text-violet-700">Telehealth Online</div>
+    <div class="space-x-4">
+      <a href="#" class="text-indigo-700 hover:text-violet-800 font-medium transition-all">Home</a>
+      <a href="#services" class="text-indigo-700 hover:text-violet-800 font-medium transition-all">Services</a>
+      <a href="#doctors" class="text-indigo-700 hover:text-violet-800 font-medium transition-all">Doctors</a>
+      <a href="#about" class="text-indigo-700 hover:text-violet-800 font-medium transition-all">About</a>
+      <a href="#contact" class="text-indigo-700 hover:text-violet-800 font-medium transition-all">Contact</a>
+      <a href="/login" class="ml-4 px-4 py-2 bg-violet-600 rounded text-white font-semibold hover:bg-violet-700 transition-all">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Background Image -->
+  <section class="relative pb-16 pt-12 min-h-[400px] flex flex-col justify-center items-center fade-in-section">
+    <!-- Your uploaded image.jpg must be placed in the project folder -->
+    <img src="images/telecom.jpeg" alt="Healthcare visual" class="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none" />
+    <div class="relative z-10 text-center flex flex-col items-center">
+      <h1 class="text-5xl font-extrabold text-violet-800 mb-3 drop-shadow">Accessible Healthcare for Everyone</h1>
+      <p class="text-xl text-indigo-700 mb-6 max-w-xl">Get quality medical advice and doctor consultations from anywhere in your community—fast, secure, and easy.</p>
+      <a href="/signup" class="px-8 py-3 bg-gradient-to-r from-indigo-400 to-purple-400 text-white text-lg rounded shadow-lg hover:from-purple-500 hover:to-indigo-500 transition">Book Your Appointment</a>
+    </div>
+  </section>
+
+<section id="services" class="py-16 relative flex justify-center items-center fade-in-section">
+  <!-- BACKGROUND BLOCK: Lavender/Periwinkle gradient with heading/text/button -->
+  <div class="absolute left-0 top-0 bottom-0 w-2/5 hidden md:block z-0 rounded-r-3xl"
+       style="background: linear-gradient(135deg, #bfa7f5 0%, #8bb3f9 100%); min-height: 400px;">
+  </div>
+  <div class="max-w-7xl mx-auto px-4 w-full flex flex-col md:flex-row items-center relative z-10">
+    <!-- Text Block on background gradient -->
+    <div class="md:w-2/5 w-full p-10 flex flex-col justify-center rounded-3xl"
+         style="background: linear-gradient(135deg, #bfa7f5 0%, #8bb3f9 100%); min-height: 360px;">
+      <h2 class="text-4xl font-bold mb-3 text-white drop-shadow">
+        <span class="opacity-90">Our</span>
+        <span class="text-indigo-800 opacity-100">Services</span>
+      </h2>
+      <p class="text-base text-white mb-6 opacity-80 font-medium">
+        Get expert medical help with appointments, prescriptions, and consultations from home. Our comprehensive services include secure video consultations with certified doctors, e‑prescriptions and medication management, remote monitoring and follow‑up care, and easy online appointment scheduling with reminders. Available 24/7 on any device — fast, private, and tailored to your needs.
+      </p>
+      <button class="px-7 py-2 bg-white text-purple-500 font-bold rounded-lg hover:bg-purple-100 hover:text-violet-700 transition self-start shadow-lg">
+        View More
+      </button>
+    </div>
+    <!-- SERVICE CARDS: in front, arranged horizontally on larger screens -->
+    <div class="md:-ml-14 md:w-3/5 w-full flex justify-center items-center space-x-0 md:space-x-8 pt-10 md:pt-0 z-10">
+      <!-- Card A -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 text-center flex flex-col items-center md:w-1/3 w-full mx-2 hover:-translate-y-2 hover:shadow-2xl transition">
+        <div class="mb-4 text-violet-600">
+          <!-- Analytics/Calendar Icon -->
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
+            <rect width="20" height="12" x="2" y="6" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path stroke="currentColor" stroke-width="2" d="M6 12v5m6-9v9m6-2v2"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-indigo-700 mb-2 text-lg">Appointments</h3>
+        <p class="text-gray-500 text-sm">
+          Schedule appointments with reminders and instant doctor notes sent to you.
+        </p>
+      </div>
+      <!-- Card B -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 text-center flex flex-col items-center md:w-1/3 w-full mx-2 hover:-translate-y-2 hover:shadow-2xl transition">
+        <div class="mb-4 text-violet-600">
+          <!-- Document Icon -->
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-width="2" d="M8 4h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+            <path stroke="currentColor" stroke-width="2" d="M8 2v4m8-4v4"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-indigo-700 mb-2 text-lg">E-Prescriptions</h3>
+        <p class="text-gray-500 text-sm">
+          Receive and manage your prescriptions online any time, anywhere.
+        </p>
+      </div>
+      <!-- Card C -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 text-center flex flex-col items-center md:w-1/3 w-full mx-2 hover:-translate-y-2 hover:shadow-2xl transition">
+        <div class="mb-4 text-violet-600">
+          <!-- Target/Consultation Icon -->
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-indigo-700 mb-2 text-lg">Consultations</h3>
+        <p class="text-gray-500 text-sm">
+          Access live video consultations with certified medical professionals.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Featured Doctors Section -->
+  <section id="doctors" class="py-14 fade-in-section">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-indigo-800 mb-6 text-center">Meet Our Doctors</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center transition-transform hover:scale-105 hover:shadow-xl">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Doctor 1" class="rounded-full w-24 h-24 mb-3 border-4 border-violet-200 hover:border-violet-500 transition-all"/>
+          <h4 class="font-semibold text-violet-700 hover:text-indigo-600 transition-colors">Dr. Habib Rahman</h4>
+          <span class="text-indigo-600 text-sm mb-1">Family Physician</span>
+          <span class="text-violet-700 text-xs">10+ years experience</span>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center transition-transform hover:scale-105 hover:shadow-xl">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Doctor 2" class="rounded-full w-24 h-24 mb-3 border-4 border-violet-200 hover:border-violet-500 transition-all"/>
+          <h4 class="font-semibold text-violet-700 hover:text-indigo-600 transition-colors">Dr. Selina Hossain</h4>
+          <span class="text-indigo-600 text-sm mb-1">Pediatrician</span>
+          <span class="text-violet-700 text-xs">8+ years experience</span>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center transition-transform hover:scale-105 hover:shadow-xl">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Doctor 3" class="rounded-full w-24 h-24 mb-3 border-4 border-violet-200 hover:border-violet-500 transition-all"/>
+          <h4 class="font-semibold text-violet-700 hover:text-indigo-600 transition-colors">Dr. Amirul Kabir</h4>
+          <span class="text-indigo-600 text-sm mb-1">Cardiologist</span>
+          <span class="text-violet-700 text-xs">15+ years experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- About Us Section -->
+<section id="about" class="py-16 bg-white fade-in-section">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-indigo-950 mb-10">About <span class="text-indigo-700">Us</span></h2>
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Left - About Details -->
+      <div class="flex-1 space-y-4 bg-indigo-50 rounded-lg p-6 shadow">
+        <h3 class="font-semibold text-indigo-900">Telehealth for Rural Communities</h3>
+        <p class="text-indigo-700">
+          Our telehealth platform has revolutionized rural healthcare by providing bridge access to specialized doctors since 2005.<br>
+          Trusted by 1750+ patients, our platform delivers secure video consultations, e-prescriptions, and more.
+        </p>
+        <button class="mt-3 px-6 py-2 bg-indigo-400 text-white font-semibold rounded hover:bg-indigo-600 transition">Know More</button>
+      </div>
+      <!-- Right - FAQ/Accordion -->
+      <div class="flex-1">
+        <div class="bg-white rounded-lg shadow p-4 divide-y divide-indigo-100">
+          <details class="py-2">
+            <summary class="cursor-pointer font-semibold text-indigo-800">What makes us unique?</summary>
+            <p class="mt-2 text-indigo-700 text-sm">
+              Our focus on accessibility, low-bandwidth environments, and localized care stands us apart for rural and urban populations.
+            </p>
+          </details>
+          <details class="py-2">
+            <summary class="cursor-pointer font-semibold text-indigo-800">How secure is my information?</summary>
+            <p class="mt-2 text-indigo-700 text-sm">
+              We use advanced encryption (HTTPS/SSL), strong authentication, and comply with all regulations to ensure maximum privacy.
+            </p>
+          </details>
+          <details class="py-2">
+            <summary class="cursor-pointer font-semibold text-indigo-800">Are services available 24/7?</summary>
+            <p class="mt-2 text-indigo-700 text-sm">
+              Yes! We operate round-the-clock with on-call doctors from every major specialty.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Metric/Highlight Section -->
+<section class="py-10 bg-gradient-to-r from-violet-300 via-sky-200 to-indigo-300 fade-in-section">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div class="py-8">
+      <span class="block text-3xl font-extrabold text-indigo-800">20+</span>
+      <span class="block text-indigo-900">Years Experience</span>
+    </div>
+    <div class="py-8">
+      <span class="block text-3xl font-extrabold text-indigo-800">35+</span>
+      <span class="block text-indigo-900">Award Win</span>
+    </div>
+    <div class="py-8">
+      <span class="block text-3xl font-extrabold text-indigo-800">1750+</span>
+      <span class="block text-indigo-900">Happy Customers</span>
+    </div>
+    <div class="py-8">
+      <span class="block text-3xl font-extrabold text-indigo-800">120+</span>
+      <span class="block text-indigo-900">Our Expert Staffs</span>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us Section (Image-based Cards) -->
+<section id="whyus" class="py-16 bg-white fade-in-section">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">
+      <span class="text-indigo-900">Why</span>
+      <span class="text-indigo-700 underline">Us</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1: Gynecology -->
+      <div class="relative rounded-lg shadow overflow-hidden group">
+        <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?auto=format&fit=crop&w=600&q=80"
+             alt="Gynecology" class="w-full h-56 object-cover" />
+        <!-- Initial label bar, same as others -->
+        <div class="absolute bottom-0 left-0 w-full px-4 py-3 bg-gradient-to-r from-indigo-500 to-sky-400 flex items-center z-10">
+          <svg fill="none" viewBox="0 0 24 24" class="w-6 h-6 text-white mr-2"><path stroke="currentColor" stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+          <span class="text-white text-lg font-medium">Cardiology</span>
+        </div>
+        <!-- Hidden overlay info -->
+        <div class="absolute inset-0 w-full h-full bg-indigo-900 bg-opacity-70 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-500 z-20">
+          <div class="text-center px-6">
+            <h4 class="text-white text-xl font-bold mb-2">Expert Heart Care</h4>
+            <p class="text-indigo-200 text-base">
+              Advanced heart care and follow-ups with remote EKG review and specialist advice.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2: Cardiology (With Hover Overlay Effect) -->
+      <div class="relative rounded-lg shadow overflow-hidden group">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+             alt="Cardiology" class="w-full h-56 object-cover" />
+        <!-- Initial label bar, same as others -->
+        <div class="absolute bottom-0 left-0 w-full px-4 py-3 bg-gradient-to-r from-indigo-500 to-sky-400 flex items-center z-10">
+          <svg fill="none" viewBox="0 0 24 24" class="w-6 h-6 text-white mr-2"><path stroke="currentColor" stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+          <span class="text-white text-lg font-medium">Cardiology</span>
+        </div>
+        <!-- Hidden overlay info -->
+        <div class="absolute inset-0 w-full h-full bg-indigo-900 bg-opacity-70 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-500 z-20">
+          <div class="text-center px-6">
+            <h4 class="text-white text-xl font-bold mb-2">Expert Heart Care</h4>
+            <p class="text-indigo-200 text-base">
+              Advanced heart care and follow-ups with remote EKG review and specialist advice.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3: Pediatrics -->
+      <div class="relative rounded-lg shadow overflow-hidden group">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+             alt="Pediatrics" class="w-full h-56 object-cover" />
+        <!-- Initial label bar, same as others -->
+        <div class="absolute bottom-0 left-0 w-full px-4 py-3 bg-gradient-to-r from-indigo-500 to-sky-400 flex items-center z-10">
+          <svg fill="none" viewBox="0 0 24 24" class="w-6 h-6 text-white mr-2"><path stroke="currentColor" stroke-width="2" d="M12 16v-4m0-4h.01"/></svg>
+          <span class="text-white text-lg font-medium">Cardiology</span>
+        </div>
+        <!-- Hidden overlay info -->
+        <div class="absolute inset-0 w-full h-full bg-indigo-900 bg-opacity-70 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-500 z-20">
+          <div class="text-center px-6">
+            <h4 class="text-white text-xl font-bold mb-2">Expert Heart Care</h4>
+            <p class="text-indigo-200 text-base">
+              Advanced heart care and follow-ups with remote EKG review and specialist advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section: Two column layout -->
+  <section id="contact" class="py-14 fade-in-section">
+    <div class="max-w-4xl mx-auto px-4 bg-white bg-opacity-90 rounded-lg shadow-md flex flex-col md:flex-row items-stretch">
+      <!-- Left: Support Info -->
+      <div class="w-full md:w-1/2 flex flex-col justify-center items-center p-8 border-r border-violet-200">
+        <h3 class="text-2xl font-bold text-indigo-800 mb-2">Support</h3>
+        <p class="mb-2 text-violet-700">For help & inquiries, reach out to us:</p>
+        <div class="mb-2">
+          <span class="font-semibold">Email:</span> <a href="mailto:support@telehealth.com" class="text-indigo-600 hover:underline">support@telehealth.com</a>
+        </div>
+        <div>
+          <span class="font-semibold">Contact No:</span> <a href="tel:+8801971001100" class="text-indigo-600 hover:underline">+880-1971-001100</a>
+        </div>
+      </div>
+      <!-- Right: Contact Form -->
+      <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
+        <h3 class="text-2xl font-bold text-indigo-800 mb-3 text-center md:text-left">Contact Us</h3>
+        <form class="space-y-4">
+          <input class="block w-full p-3 rounded border-2 border-indigo-200 focus:border-violet-500 focus:outline-none" type="text" placeholder="Your Name" required>
+          <input class="block w-full p-3 rounded border-2 border-indigo-200 focus:border-violet-500 focus:outline-none" type="email" placeholder="Email Address" required>
+          <textarea class="block w-full p-3 rounded border-2 border-indigo-200 focus:border-violet-500 focus:outline-none" placeholder="Your Message" rows="4" required></textarea>
+          <button type="submit" class="w-full py-3 rounded bg-violet-600 hover:bg-violet-700 text-white font-bold shadow transition">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-indigo-700 bg-violet-100 mt-8">
+    &copy; 2025 Telehealth Online. All rights reserved.
+  </footer>
+
+  <!-- Scroll reveal effect script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll(".fade-in-section");
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("appear");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
