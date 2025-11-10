@@ -11,7 +11,6 @@
     .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);}
     .fade-in.appear { opacity: 1; transform: translateY(0);}
     .slot.active, .slot:focus {background: linear-gradient(90deg,#b7bdfa,#e48dfa); color: #fff; font-weight: 600;}
-    /* Scrollbar style */
     .scrollbar::-webkit-scrollbar { width: 8px; }
     .scrollbar::-webkit-scrollbar-thumb { background: #c7b5f9; border-radius: 4px; }
     .scrollbar::-webkit-scrollbar-track { background: transparent; }
@@ -29,15 +28,17 @@
           <div class="text-indigo-600 text-sm">Ready for your next checkup?</div>
         </div>
       </div>
-      <!-- Appointment Progress Card -->
-      <div class="glass rounded-2xl shadow px-6 py-4 flex justify-between items-center">
-        <div>
+      <!-- Appointment Progress Card with Reschedule -->
+      <div class="glass rounded-2xl shadow px-6 py-4 flex flex-col items-center md:flex-row md:justify-between md:items-center">
+        <div class="flex-1">
           <div class="text-sm text-indigo-800 mb-1">Upcoming:</div>
-          <div class="font-semibold text-violet-700">Cardiology — 12 Dec</div>
+          <div class="font-semibold text-violet-700 inline">Cardiology — 12 Dec</div>
         </div>
-        <svg class="w-10 h-10 text-violet-400" fill="none" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="4" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" d="M16 2v4M8 2v4M4 10h16"/></svg>
+        <div class="mt-4 md:mt-0 flex items-center gap-3">
+          <button id="rescheduleBtn" class="px-3 py-1 bg-pink-200 text-pink-800 rounded-xl font-bold hover:bg-pink-400 transition">Reschedule</button>
+        </div>
       </div>
-      <!-- Animated Timeline / Steps (simple) -->
+      <!-- Animated Timeline / Steps -->
       <div>
         <div class="text-indigo-700 font-semibold mb-2">Booking Steps</div>
         <ul class="flex flex-col gap-2 text-sm">
@@ -106,7 +107,6 @@
               </div>
             </div>
           </div>
-          <!-- Add more gynecologists here -->
         </div>
       </div>
       <!-- Physiology -->
@@ -144,7 +144,33 @@
       </div>
     </div>
   </div>
+
+  <!-- Reschedule Modal -->
+  <div id="rescheduleModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+    <div class="glass bg-gradient-to-br from-[#e2dafe] to-[#b9e3fa] shadow-2xl rounded-2xl w-full max-w-2xl p-8 relative animate-fadeIn">
+      <button id="closeReschedule" class="absolute top-4 right-4 p-2 rounded-full bg-violet-500 text-white shadow-lg hover:bg-violet-600 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <h2 class="text-2xl font-extrabold text-violet-800 mb-5">Reschedule Appointment</h2>
+      <label class="block mb-2 text-violet-600 font-semibold" for="rescheduleDate">Select New Date:</label>
+      <input type="date" id="rescheduleDate" class="rounded-lg border px-4 py-3 w-full text-indigo-700 bg-white bg-opacity-70 focus:outline-none glass focus:ring-2 focus:ring-violet-400 transition mb-4" />
+
+      <div class="mb-4">
+        <div class="text-indigo-700 font-semibold mb-2">Select New Time Slot:</div>
+        <div id="rescheduleSlots" class="flex gap-3">
+          <span class="slot block bg-indigo-100 text-indigo-800 rounded px-3 py-2 cursor-pointer">9am</span>
+          <span class="slot block bg-indigo-100 text-indigo-800 rounded px-3 py-2 cursor-pointer">12pm</span>
+          <span class="slot block bg-indigo-100 text-indigo-800 rounded px-3 py-2 cursor-pointer">6pm</span>
+        </div>
+      </div>
+      <div class="text-right">
+        <button id="confirmReschedule" class="px-6 py-2 bg-gradient-to-r from-pink-400 to-violet-500 text-white rounded-xl font-bold shadow hover:from-pink-600 hover:to-violet-700 transition">Confirm Reschedule</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // Slot selection - booking
     let selectedSlot = null;
     document.querySelectorAll('.slot').forEach(function(slot) {
       slot.addEventListener('click', function() {
@@ -153,14 +179,47 @@
         selectedSlot = slot;
       });
     });
+
+    // Fade in page
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelector('.fade-in').classList.add('appear');
     });
+
+    // Confirm appointment
     document.getElementById('confirmBtn').onclick = function(){
       if(selectedSlot) {
         alert("Booked: " + selectedSlot.textContent + " on " + document.getElementById('appointmentDate').value);
       } else {
         alert("Please select a time slot!");
+      }
+    }
+
+    // Reschedule Modal logic
+    document.getElementById("rescheduleBtn").onclick = function() {
+      document.getElementById("rescheduleModal").classList.remove("hidden");
+    };
+    document.getElementById("closeReschedule").onclick = function() {
+      document.getElementById("rescheduleModal").classList.add("hidden");
+    };
+    document.getElementById("rescheduleModal").onclick = function(e){
+      if(e.target===this){this.classList.add("hidden");}
+    };
+    // Slot select effect in Reschedule
+    let selectedRescheduleSlot = null;
+    document.querySelectorAll("#rescheduleSlots .slot").forEach(function(slot) {
+      slot.addEventListener('click', function() {
+        if(selectedRescheduleSlot) selectedRescheduleSlot.classList.remove('active');
+        slot.classList.add('active');
+        selectedRescheduleSlot = slot;
+      });
+    });
+    document.getElementById('confirmReschedule').onclick = function(){
+      if(selectedRescheduleSlot) {
+        alert("Rescheduled for: " + selectedRescheduleSlot.textContent + " on " + document.getElementById('rescheduleDate').value);
+        document.getElementById("rescheduleModal").classList.add("hidden");
+        // Here you would update the appointment in your backend via AJAX/fetch
+      } else {
+        alert("Please select a new time slot!");
       }
     }
   </script>
